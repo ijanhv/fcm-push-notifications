@@ -4,7 +4,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 // Initialize Firebase Admin SDK
 if (!admin.apps.length) {
-  const serviceAccount = require("@/service-account.json");
+  const serviceAccount = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT!);
+
+  // const serviceAccount = require("@/service-account.json");
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
   });
