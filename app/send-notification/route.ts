@@ -14,7 +14,7 @@ if (!admin.apps.length) {
 
 export async function POST(request: NextRequest) {
   const { token, title, message, link } = await request.json();
-
+  console.log("Received data:", { token, title, message, link });
   const payload: Message = {
     token,
     notification: {
@@ -36,3 +36,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: false, error });
   }
 }
+
+
+// cuVNmnkKA9K-PYbBSE1ORD:APA91bFdjwEbLUVv49igfp6n2ol6m4z7aLzMUJWPilcpGZXVBTctU99J5IEdar8WRJmd2EyMFJXWNmyIqaut_8qn3O_uc4OvjXPHvbapeRTnchQdOG8kKSk
